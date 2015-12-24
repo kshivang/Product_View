@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.adurcup.Swipable_Experiment.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_gravity="center"
+        style="@android:style/Widget.ProgressBar.Small"
+        android:layout_centerInParent="true" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@id/appbar"
+        android:id="@+id/scrollView"
+        android:background="#f3f3f3"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/scontainer"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+                <com.adurcup.swipable_experiment.CirclePageIndicator
+                    android:id="@+id/indicator"
+                    android:layout_height="10dp"
+                    android:layout_below="@id/container"
+                    android:layout_width="match_parent"
+                    android:background="#000"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:background="#fff"
+                android:layout_width="330dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="match_parent"
+                android:paddingTop="16dp"
+                android:layout_below="@id/scontainer">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:id="@+id/productId_parent"
+                    android:paddingLeft="15dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:paddingBottom="@dimen/bottom_padding"
+                        android:id="@+id/text"
+                        android:text="Product Id  "
+                         />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_toRightOf="@+id/text"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="60dp"
+                        android:textColor="@color/colorBlack"
+                        android:layout_alignBaseline="@id/text"
+                        android:id="@+id/productId"
+                        android:text="Cup" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:id="@+id/text2"
+                        android:layout_alignLeft="@id/text"
+                        android:layout_below="@id/text"
+                        android:paddingBottom="@dimen/bottom_padding"
+                        android:text="Name  "/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_alignLeft="@id/productId"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/text"
+                        android:textColor="@color/colorBlack"
+                        android:layout_alignBaseline="@+id/text2"
+                        android:id="@+id/name"
+                        android:text="Cup"
+                         />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_below="@+id/text2"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:layout_alignLeft="@+id/text"
+                        android:paddingBottom="@dimen/bottom_padding"
+                        android:id="@+id/text4"
+                        android:text="Catagory  "
+                         />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_alignLeft="@id/productId"
+                        android:layout_below="@id/name"
+                        android:layout_height="match_parent"
+                        android:textColor="#000"
+                        android:id="@+id/category"
+                        android:text="Cup"
+                        android:layout_alignBaseline="@id/text4"
+                         />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="@dimen/bottom_padding"
+                        android:gravity="left"
+                        android:id="@+id/text6"
+                        android:layout_below="@id/text4"
+                        android:text="Description  "
+                         />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_below="@id/category"
+                        android:layout_alignLeft="@id/productId"
+                        android:layout_alignBaseline="@id/text6"
+                        android:layout_height="match_parent"
+                        android:textColor="#000"
+                        android:id="@+id/description"
+                        android:text="Cup"
+                         />
+                    <TextView
+                        android:layout_below="@id/text6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="end"
+                        android:textAlignment="textEnd"
+                        android:id="@+id/text7"
+                        android:paddingBottom="@dimen/bottom_padding"
+                        android:text="Min. Quantity  "
+                         />
+                    <TextView
+                        android:layout_below="@id/description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignBaseline="@+id/text7"
+                        android:layout_alignLeft="@id/productId"
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/min_quantity"
+                        android:text="Cup"
+                         />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/text7"
+                        android:gravity="end"
+                        android:textAlignment="textEnd"
+                        android:id="@+id/text8"
+                        android:text="InitialCost  "
+                        android:paddingBottom="@dimen/bottom_padding"
+                         />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_below="@id/min_quantity"
+                        android:layout_alignLeft="@id/productId"
+                        android:layout_alignBaseline="@id/text8"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/initial_cost"
+                        android:text="Cup"
+                         />
+
+                    <TextView
+                        android:layout_below="@id/text8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="end"
+                        android:textAlignment="textEnd"
+                        android:id="@+id/text9"
+                        android:text="Price Per Unit  "
+                        android:paddingBottom="@dimen/bottom_padding"
+                         />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignLeft="@id/productId"
+                        android:layout_alignBaseline="@+id/text9"
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/price_per_unit"
+                        android:text="Cup"
+                         />
+
+                    <TextView
+                        android:layout_below="@id/text9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="end"
+                        android:textAlignment="textEnd"
+                        android:id="@+id/text10"
+                        android:text="Customizable  "
+                        android:paddingBottom="@dimen/bottom_padding"
+                         />
+                    <TextView
+                        android:layout_alignBaseline="@+id/text10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignLeft="@id/productId"
+                        android:textColor="#000"
+                        android:id="@+id/customizable"
+                        android:text="Cup"
+                         />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:paddingBottom="@dimen/bottom_padding"
+                        android:layout_below="@id/text10"
+                        android:layout_height="match_parent"
+                        android:gravity="end"
+                        android:textAlignment="textEnd"
+                        android:id="@+id/text11"
+                        android:text="Color  "
+                         />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_alignLeft="@id/productId"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/colorBlack"
+                        android:layout_alignBaseline="@id/text11"
+                        android:id="@+id/color"
+                        android:text="Cup"
+                         />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="left"
+                        android:layout_below="@id/text11"
+                        android:paddingBottom="@dimen/bottom_padding"
+                        android:id="@+id/text12"
+                        android:text="Types:"
+                         />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_alignLeft="@id/productId"
+                        android:layout_alignBaseline="@id/text12"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/colorBlack"
+                        android:layout_below="@id/color"
+                        android:id="@+id/types"
+                        android:text="Cup"
+                         />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_below="@id/text12"
+                        android:layout_height="match_parent"
+                        android:gravity="left"
+                        android:paddingBottom="@dimen/bottom_padding"
+                        android:id="@+id/text13"
+                        android:text="Sizes:"
+                         />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_alignBaseline="@id/text13"
+                        android:layout_below="@id/types"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/sizes"
+                        android:layout_alignLeft="@id/productId"
+                        android:text="Cup"
+                         />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:paddingBottom="@dimen/bottom_padding"
+                        android:layout_height="match_parent"
+                        android:gravity="end"
+                        android:textAlignment="textEnd"
+                        android:id="@+id/text14"
+                        android:layout_below="@id/text13"
+                        android:text="Delivery:"
+                         />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_below="@id/sizes"
+                        android:layout_alignBaseline="@id/text14"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/delivery"
+                        android:layout_alignLeft="@id/productId"
+                        android:text="Cup"
+                         />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_below="@id/text14"
+                        android:paddingBottom="@dimen/bottom_padding"
+                        android:layout_height="match_parent"
+                        android:gravity="end"
+                        android:textAlignment="textEnd"
+                        android:id="@+id/text15"
+                        android:text="Unit Description:"
+                         />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_below="@id/delivery"
+                        android:layout_alignBaseline="@id/text15"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/colorBlack"
+                        android:layout_alignLeft="@id/productId"
+                        android:id="@+id/unit_description"
+                        android:text="Cup"
+                         />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="@dimen/bottom_padding"
+                        android:gravity="end"
+                        android:layout_below="@id/text15"
+                        android:textAlignment="textEnd"
+                        android:id="@+id/text16"
+                        android:text="Advertisement:"
+                         />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_alignLeft="@id/productId"
+                        android:layout_below="@id/unit_description"
+                        android:layout_alignBaseline="@id/text16"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/advertisement"
+                        android:text="Cup"
+                         />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:borderWidth="0dp"
+        android:layout_margin="@dimen/fab_margin"
+        app:fabSize="normal"
+        android:src="@android:drawable/ic_input_add"
+        android:tint="#fff"/>
+
+</RelativeLayout>
